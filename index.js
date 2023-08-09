@@ -1,12 +1,14 @@
 function createShip (length) {
-    const Ship = {
-        length: length,
-        times_hit: 0,
-        sunk: false
-    }
+  const Ship = {
+    times_hit:0,
+    sunken: false,
+    length:length,
+    hit,
+    isSunk
+  }
 
     function hit(){
-        Ship.times_hit ++ 
+        Ship.times_hit++ 
         if (isSunk()){
             return "sunk"
         }
@@ -14,15 +16,11 @@ function createShip (length) {
 
     function isSunk(){
         if (Ship.length == Ship.times_hit) {
-            Ship.sunk = true
+              Ship.sunken = true
         }
     }
 
-    return {
-        Ship,
-        hit,
-        isSunk
-    }
+    return Ship
 }
 
 
@@ -105,13 +103,13 @@ function createGameBoard(size) {
 }
 
 const bismarck = createShip(4)
-console.log(bismarck.hit())
 
-bismarck.hit()
-bismarck.hit()
-bismarck.hit()
-bismarck.hit()
+// bismarck.hit()
+// bismarck.hit()
+// bismarck.hit()
+// bismarck.hit()
 
+// console.log(bismarck)
 
 
 module.exports = createShip;
